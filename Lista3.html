@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <title>Lista 3 - JavaScript</title>
+        <meta charset="UTF-8">
+        <link href="MeuStyle3.css" rel="stylesheet" type="text/css"/>
+        <script src="JavaScript.js"></script>
+    </head>
+    <body>
+        <div id="questaoUm" class="questoes">
+            <h2>Questão 1</h2>
+            <form id="primeiroForm">
+                <input type="button" id="btnVermelho" class="btnUm" value="Vermelho" onclick="alterarCorFundoBtn('red')" />
+                <input type="button" id="btnVerde" class="btnUm" value="Verde" onclick="alterarCorFundoBtn('green')" />
+                <input type="button" id="btnAzul" class="btnUm" value="Azul" onclick="alterarCorFundoBtn('blue')" />
+                <input type="button" id="btnAmarelo" class="btnUm" value="Amarelo" onclick="alterarCorFundoBtn('yellow')" /><br>
+                Nome: <input type="text" name="nmePessoa">
+                Idade: <input type="text" name="idadePessoa">
+                <input type="button" name="btnEviar" value="Enviar">
+            </form>
+        </div>
+        <div id="questaoDois" class="questoes">
+            <h2>Questão 2</h2>
+            <a href="" value="red" id="linkVermelho" onclick="javascript:alterarCorFundoLink('red'); return false;">Vermelho</a>
+            <a href="" value="green" id="linkVerde" onclick="javascript:alterarCorFundoLink('green'); return false;">Verde</a>
+            <a href="" value="blue" id="linkAzul" onclick="javascript:alterarCorFundoLink('blue'); return false;">Azul</a>
+            <a href="" value="yellow" id="linkAmarelo" onclick="javascript:alterarCorFundoLink('yellow'); return false;">Amarelo</a>
+        </div>
+        <div id="questaoTres" class="questoes">
+            <h2>Questão 3</h2>
+            Escolha uma cor: 
+            <select id="selectCor" name="selectCor" onchange="javascript:alterarCorFundoSelect();">
+                <option value="red">Vermelho</option>
+                <option value="green">Verde</option>
+                <option value="blue">Azul</option>
+                <option value="yellow">Amarelo</option>
+            </select>
+        </div>
+        <div class="questoes">
+            <h2>Questão 4</h2>
+            <input type="button" name="btnParagrafo" value="Oculta/Mostrar" onclick="javascript:displayParagrafo();" />
+            <p id="paragrafo">
+                "Não te fies do tempo nem da eternidade,
+                que as nuvens me puxam pelos vestidos
+                que os ventos me arrastam contra o meu desejo!
+                Apressa-te, amor, que amanhã eu morro,
+                que amanhã morro e não te vejo!
+                Não demores tão longe, em lugar tão secreto,
+                nácar de silêncio que o mar comprime,
+                o lábio, limite do instante absoluto!
+                Apressa-te, amor, que amanhã eu morro,
+                que amanhã eu morro e não te escuto!
+                Aparece-me agora, que ainda reconheço
+                a anêmona aberta na tua face
+                e em redor dos muros o vento inimigo…
+                Apressa-te, amor, que amanhã eu morro,
+                que amanhã eu morro e não te digo…"
+            </p>
+        </div>
+        <div class="questoes">
+            <h2>Questão 5</h2>
+            <form id="primeiroForm">
+                Nome: <input type="text" name="nmeUsuario" id="nmeUsuario"><br>
+                Senha: <input type="password" name="novaSenha" id="novaSenha"><br>
+                Confirmar Senha: <input type="password" name="confirmaNovaSenha" id="confirmaNovaSenha"><br>
+                <input type="button" id="btnEviarCadastro" value="Enviar" onclick="enviarCadastro()">
+            </form>
+        </div>
+        <div class="questoes">
+            <h2>Questão 6</h2>
+            Descubra se a palavra é um palindromo ou não <br>
+            <input type="text" id="dscPalavra" name="dscPalavra" placeholder="Escreva uma palavra" onchange="javascript:verificaPalindromo();">
+            <div id="respostaSeis"></div>
+        </div>
+        <div class="questoes">
+            <h2>Questão 7</h2>
+            <div id="questaoSete" onload="javascript:montaInputs();"></div>
+            <button id="btnInverter" value="btnInverter">Inverter</button>
+        </div>
+        <div class="questoes">
+            <h2>Questão 8</h2>
+            <form style="padding-left: 10px">
+                Nome: <input type="text" id="nomePessoa" name="nomePessoa"><br>
+                Pessoa: <input type="radio" id="tpoPessoa" name="tpoPessoa" value="fisica"> Física
+                        <input type="radio" id="tpoPessoa" name="tpoPessoa" value="juridica"> Jurídica <br>
+                CPF: <input type="text" id="cpfPessoa" name="cpfPessoa"> <!--Abilitado apenas se pessoa fisica-->
+                CNPJ: <input type="text" id="cnpjEmpresa" name="cnpjEmpresa"><br> <!--Abilitado apenas se pessoa juridica-->
+                Data de Nascimento: <input type="date" id="dtaNascimento" name="dtaNascimento"><br> <!--Abilitado apenas se pessoa fisica e só numeros-->
+                Endereço: <input type="text" id="txtEndereco" name="txtEndereco">
+                CEP: <input type="text" id="nroCep" name="nroCep"><br> <!--Só numeros-->
+                Telefone: <input type="text" id="telPessoa" name="telPessoa"><br>
+                E-mail: <input type="text" id="emailPessoa" name="emailPessoa"><br>
+                <input type="button" id="btnSalvar" name="btnSalvar" value="Salvar" onclick="salvarForm()">
+            </form>
+        </div>
+        <div class="questoes">
+            <h2>Questão 9</h2>
+            <form>
+                Palavra 1: <input type="text" name="palavraUm">
+                Palavra 2: <input type="text" name="palavraDois"><br>
+                &nbsp;<br>
+                Resultado:<input type="text" name="resultado" disabled>
+            </form>
+        </div>
+        <div class="questoes">
+            <h2>Questão 10</h2>
+            <div id="questao10"></div>
+        </div>
+    </body>
+    </html>

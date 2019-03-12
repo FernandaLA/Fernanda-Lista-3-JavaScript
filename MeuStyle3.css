@@ -1,0 +1,20 @@
+.questoes {
+    width: 800px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 0 auto;
+}
+
+#btnVermelho, #linkVermelho {
+    color: red;
+}
+#btnVerde, #linkVerde {
+    color: green;
+}
+#btnAzul, #linkAzul {
+    color: blue;
+}
+#btnAmarelo, #linkAmarelo {
+    color: yellow;
+    font-weight: bold;
+}
