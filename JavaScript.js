@@ -19,7 +19,7 @@ function alterarCorFundoSelect() {
 //Questão 4 - Esconder ou Mostrar o paragráfo ao clicar no botão
 function displayParagrafo() {
     var txt = document.getElementById("paragrafo");
-    if(txt.style.display == 'block' || txt.style.display == '') {
+    if (txt.style.display == 'block' || txt.style.display == '') {
         txt.style.display = 'none';
     } else {
         txt.style.display = 'block';
@@ -31,13 +31,13 @@ function displayParagrafo() {
 // se as senhas informadas são igual e se possuem de 6 à 10 caracteres
 function enviarCadastro() {
     // Verificando se todos os campos foram preenchidos
-    if (document.getElementById("nmeUsuario").value != '' && 
-    document.getElementById("novaSenha").value != '' && 
-    document.getElementById("confirmaNovaSenha").value != ''){
+    if (document.getElementById("nmeUsuario").value != '' &&
+        document.getElementById("novaSenha").value != '' &&
+        document.getElementById("confirmaNovaSenha").value != '') {
         // Verificando se a senha tem de 6 à 10 caracteres
-        if(document.getElementById("novaSenha").value.length >=6 && document.getElementById("novaSenha").value.length <=10) {
+        if (document.getElementById("novaSenha").value.length >= 6 && document.getElementById("novaSenha").value.length <= 10) {
             // Verificando se as senhas digitadas são iguais
-            if(document.getElementById("novaSenha").value == document.getElementById("confirmaNovaSenha").value){
+            if (document.getElementById("novaSenha").value == document.getElementById("confirmaNovaSenha").value) {
                 alert("Cadastro realizado com Sucesso!!");
             } else {
                 // se as senhas digitadas NÃO são iguais
@@ -57,7 +57,7 @@ function enviarCadastro() {
 function verificaPalindromo() {
     var palavra = document.getElementById("dscPalavra").value
     var html = '';
-    if (palavra == palavra.split('').reverse().join('')){
+    if (palavra == palavra.split('').reverse().join('')) {
         html += '<h3 style="color: green;">Essa palavra é um palindromo!</h3>';
     } else {
         html += '<h3 style="color: red;">Essa palavra NÃO é um palindromo!</h3>';
@@ -79,13 +79,35 @@ function montaInputs() {
 //Abilitar cpf e data de nascimento apenas quando pessoa fisica
 //Abilitar cnpj apenas quando pessoa jurídica
 //Os campos cep e data de nascimento só podem aceitar numeros
-function salvarForm() {
-    document.getElementById("questaoSete");
+function apenasNumeros(e) {
+    var cep = (window.event) ? event.keyCode : e.which;   
+    if(cep>47 && cep<58){ 
+        return true;
+    } else if (cep==8 || cep==0){
+        return true;
+    }else{
+        return false;
+    }
+    //permitir apenas numeros no cep
+}
+
+function verificaCampos(ind) {
+    if(ind == 'f') {
+        document.getElementById("cpfPessoa").disabled = false;
+        document.getElementById("dtaNascimento").disabled = false;
+        document.getElementById("cnpjEmpresa").disabled = true;
+    } else if(ind == 'j') {
+        document.getElementById("cnpjEmpresa").disabled = false;
+        document.getElementById("cpfPessoa").disabled = true;
+        document.getElementById("dtaNascimento").disabled = true;
+    }
 }
 
 //Questão 9 - Intercalar duas palavras em um unico campo desabilitado para edição
 function intercalarPalavras() {
-    document.getElementById("questaoSete");
+    var a = document.getElementById("palavraUm").value;
+    var b = document.getElementById("palavraDois").value;
+    document.getElementById("resultado").value = 'Ex.: "Joao" e "Mara" -> JMoaaroa';
 }
 
 //Questão 10 - Script que receba três numeros fornecidos pelo usuário atravéz de um formulario

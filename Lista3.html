@@ -29,6 +29,7 @@
             <h2>Questão 3</h2>
             Escolha uma cor: 
             <select id="selectCor" name="selectCor" onchange="javascript:alterarCorFundoSelect();">
+                <option value="" selected></option>
                 <option value="red">Vermelho</option>
                 <option value="green">Verde</option>
                 <option value="blue">Azul</option>
@@ -72,7 +73,7 @@
             <div id="respostaSeis"></div>
         </div>
         <div class="questoes">
-            <h2>Questão 7</h2>
+            <h2 style="color: red;">Questão 7</h2>
             <div id="questaoSete" onload="javascript:montaInputs();"></div>
             <button id="btnInverter" value="btnInverter">Inverter</button>
         </div>
@@ -80,29 +81,30 @@
             <h2>Questão 8</h2>
             <form style="padding-left: 10px">
                 Nome: <input type="text" id="nomePessoa" name="nomePessoa"><br>
-                Pessoa: <input type="radio" id="tpoPessoa" name="tpoPessoa" value="fisica"> Física
-                        <input type="radio" id="tpoPessoa" name="tpoPessoa" value="juridica"> Jurídica <br>
+                Pessoa: <input type="radio" id="tpoPessoa" name="tpoPessoa" value="fisica" onchange="javascript:verificaCampos('f'); return false;"> Física
+                        <input type="radio" id="tpoPessoa" name="tpoPessoa" value="juridica" onchange="javascript:verificaCampos('j'); return false;"> Jurídica <br>
                 CPF: <input type="text" id="cpfPessoa" name="cpfPessoa"> <!--Abilitado apenas se pessoa fisica-->
                 CNPJ: <input type="text" id="cnpjEmpresa" name="cnpjEmpresa"><br> <!--Abilitado apenas se pessoa juridica-->
                 Data de Nascimento: <input type="date" id="dtaNascimento" name="dtaNascimento"><br> <!--Abilitado apenas se pessoa fisica e só numeros-->
                 Endereço: <input type="text" id="txtEndereco" name="txtEndereco">
-                CEP: <input type="text" id="nroCep" name="nroCep"><br> <!--Só numeros-->
+                CEP: <input type="text" id="nroCep" name="nroCep" onkeypress="return apenasNumeros(event)"><br> <!--Só numeros-->
                 Telefone: <input type="text" id="telPessoa" name="telPessoa"><br>
                 E-mail: <input type="text" id="emailPessoa" name="emailPessoa"><br>
                 <input type="button" id="btnSalvar" name="btnSalvar" value="Salvar" onclick="salvarForm()">
             </form>
         </div>
         <div class="questoes">
-            <h2>Questão 9</h2>
-            <form>
-                Palavra 1: <input type="text" name="palavraUm">
-                Palavra 2: <input type="text" name="palavraDois"><br>
+            <h2 style="color: red;">Questão 9</h2>
+            <form onchange="intercalarPalavras()">
+                Palavra 1: <input type="text" id="palavraUm" name="palavraUm">
+                Palavra 2: <input type="text" id="palavraDois" name="palavraDois"><br>
                 &nbsp;<br>
-                Resultado:<input type="text" name="resultado" disabled>
+                Resultado:<input type="text" id="resultado" name="resultado"
+                    placeholder="Ex.: 'Joao' e 'Mara' -> JMoaaroa" disabled>
             </form>
         </div>
         <div class="questoes">
-            <h2>Questão 10</h2>
+            <h2 style="color: red;">Questão 10</h2>
             <div id="questao10"></div>
         </div>
     </body>
