@@ -65,14 +65,32 @@ function verificaPalindromo() {
     document.getElementById("respostaSeis").innerHTML = html;
 }
 
-//Questão 7 - Armazenar 5 nomes inseridos por inputs em um array e apresentá-los em ordem invertida
-function montaInputs() {
-    var html = "Nome 1 <input type='text' id='nomeUm' /><br>";
-    html += "Nome 2 <input type='text' id='nomeDois' /><br>";
-    html += "Nome 3 <input type='text' id='nomeTres' /><br>";
-    html += "Nome 4 <input type='text' id='nomeQuatro' /><br>";
-    html += "Nome 5 <input type='text' id='nomeCinco' />";
-    document.getElementById("questaoSete").innerHTML = html;
+function criaInputs() {
+    //Questão 7 - Criar campos para inserir os nomes 
+    for (i = 0; i < 5; i++) {
+        var n = i + 1;
+        document.getElementById('questaoSete').innerHTML += "Nome " + n + " <input type='text' name='nomes'><br><br>";
+    }
+    //Questão 10 - Criar campos para usuário inserir 3 números
+    document.getElementById('questaoDez').innerHTML = "<form>"
+    for (i = 0; i < 3; i++) {
+        var n = i + 1;
+        document.getElementById('questaoDez').innerHTML += "Número " + n + " <input type='text' name='numeros' onkeypress='return apenasNumeros(event)'><br><br>";
+    }
+    document.getElementById('questaoDez').innerHTML += "<input type='button' value='Enviar' onclick='return retornoDez()'>";
+    document.getElementById('questaoDez').innerHTML += "</form>"
+}
+
+//Questão 7 - Salvar os nomes em um Array e Apresentar o valores em ordem invertida
+function salvar() {
+    var todos = document.getElementsByName('nomes').length;
+    estatico = new Array();
+    for (i = 0; i < 5; i++) {
+        estatico += document.getElementsByName('nomes')[i].value;
+    }
+    for (i = todos; i > 0; i--) {
+        document.getElementsByName('nomes')[i - 1].value = estatico;
+    }
 }
 
 //Questão 8 - Regras de Formulário
@@ -80,23 +98,23 @@ function montaInputs() {
 //Abilitar cnpj apenas quando pessoa jurídica
 //Os campos cep e data de nascimento só podem aceitar numeros
 function apenasNumeros(e) {
-    var cep = (window.event) ? event.keyCode : e.which;   
-    if(cep>47 && cep<58){ 
+    //permitir apenas numeros no cep
+    var cep = (window.event) ? event.keyCode : e.which;
+    if (cep > 47 && cep < 58) {
         return true;
-    } else if (cep==8 || cep==0){
+    } else if (cep == 8 || cep == 0) {
         return true;
-    }else{
+    } else {
         return false;
     }
-    //permitir apenas numeros no cep
 }
 
 function verificaCampos(ind) {
-    if(ind == 'f') {
+    if (ind == 'f') {
         document.getElementById("cpfPessoa").disabled = false;
         document.getElementById("dtaNascimento").disabled = false;
         document.getElementById("cnpjEmpresa").disabled = true;
-    } else if(ind == 'j') {
+    } else if (ind == 'j') {
         document.getElementById("cnpjEmpresa").disabled = false;
         document.getElementById("cpfPessoa").disabled = true;
         document.getElementById("dtaNascimento").disabled = true;
@@ -105,13 +123,19 @@ function verificaCampos(ind) {
 
 //Questão 9 - Intercalar duas palavras em um unico campo desabilitado para edição
 function intercalarPalavras() {
-    var a = document.getElementById("palavraUm").value;
-    var b = document.getElementById("palavraDois").value;
-    document.getElementById("resultado").value = 'Ex.: "Joao" e "Mara" -> JMoaaroa';
+    var a = document.getElementById("palavraUm").value.length;
+    var b = document.getElementById("palavraDois").value.length;
+    if (a > b) {
+        var total = a;
+    } else {
+        var total = b;
+    }
+    for (i = 0; i < total; i++) {
+        document.getElementById("resultado").value = 'Ex.: "Joao" e "Mara" -> JMoaaroa';
+    }
 }
 
-//Questão 10 - Script que receba três numeros fornecidos pelo usuário atravéz de um formulario
-function obterNumeros() {
-    document.getElementById("questaoSete");
+//Retorno da questão 10
+function retornoDez(){
+    alert("Ok");
 }
-

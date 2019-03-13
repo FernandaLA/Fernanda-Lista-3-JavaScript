@@ -5,7 +5,7 @@
         <link href="MeuStyle3.css" rel="stylesheet" type="text/css"/>
         <script src="JavaScript.js"></script>
     </head>
-    <body>
+    <body onload="javascript:criaInputs()">
         <div id="questaoUm" class="questoes">
             <h2>Questão 1</h2>
             <form id="primeiroForm">
@@ -72,10 +72,10 @@
             <input type="text" id="dscPalavra" name="dscPalavra" placeholder="Escreva uma palavra" onchange="javascript:verificaPalindromo();">
             <div id="respostaSeis"></div>
         </div>
-        <div class="questoes">
-            <h2 style="color: red;">Questão 7</h2>
-            <div id="questaoSete" onload="javascript:montaInputs();"></div>
-            <button id="btnInverter" value="btnInverter">Inverter</button>
+        <div class="questoes" style="height: 400px;">
+            <h2 style="color: darkorange;">Questão 7</h2>
+            <div id="questaoSete"></div>
+            <input type="button" value="Salvar" onclick="javascript:salvar()">
         </div>
         <div class="questoes">
             <h2>Questão 8</h2>
@@ -97,15 +97,14 @@
             <h2 style="color: red;">Questão 9</h2>
             <form onchange="intercalarPalavras()">
                 Palavra 1: <input type="text" id="palavraUm" name="palavraUm">
-                Palavra 2: <input type="text" id="palavraDois" name="palavraDois"><br>
-                &nbsp;<br>
+                Palavra 2: <input type="text" id="palavraDois" name="palavraDois"><br><br>
                 Resultado:<input type="text" id="resultado" name="resultado"
                     placeholder="Ex.: 'Joao' e 'Mara' -> JMoaaroa" disabled>
             </form>
         </div>
         <div class="questoes">
-            <h2 style="color: red;">Questão 10</h2>
-            <div id="questao10"></div>
+            <h2>Questão 10</h2>
+            <div id="questaoDez"></div>
         </div>
     </body>
     </html>
