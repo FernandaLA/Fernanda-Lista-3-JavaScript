@@ -85,11 +85,11 @@ function criaInputs() {
 function salvar() {
     var todos = document.getElementsByName('nomes').length;
     estatico = new Array();
-    for (i = 0; i < 5; i++) {
-        estatico += document.getElementsByName('nomes')[i].value;
+    for (i = 0; i < todos; i++) {
+        estatico[i] = document.getElementsByName('nomes')[i].value;
     }
     for (i = todos; i > 0; i--) {
-        document.getElementsByName('nomes')[i - 1].value = estatico;
+        document.getElementsByName('nomes')[todos-i].value = estatico[i-1];
     }
 }
 
@@ -123,19 +123,22 @@ function verificaCampos(ind) {
 
 //Questão 9 - Intercalar duas palavras em um unico campo desabilitado para edição
 function intercalarPalavras() {
-    var a = document.getElementById("palavraUm").value.length;
-    var b = document.getElementById("palavraDois").value.length;
-    if (a > b) {
-        var total = a;
+    if (document.getElementById("resultado").value.length > 0) {
+        document.getElementById("resultado").value = '';
+    }
+    var a = document.getElementById("palavraUm").value;
+    var b = document.getElementById("palavraDois").value;
+    if (a.length > b.length) {
+        var total = a.length;
     } else {
-        var total = b;
+        var total = b.length;
     }
     for (i = 0; i < total; i++) {
-        document.getElementById("resultado").value = 'Ex.: "Joao" e "Mara" -> JMoaaroa';
+        document.getElementById("resultado").value += a.substring(i, i + 1) + b.substring(i, i + 1);
     }
 }
 
 //Retorno da questão 10
-function retornoDez(){
+function retornoDez() {
     alert("Ok");
 }

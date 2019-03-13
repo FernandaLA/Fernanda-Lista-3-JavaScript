@@ -1,10 +1,12 @@
+/*Definindo atributos para separar as questões*/
 .questoes {
     width: 800px;
-    height: 300px;
+    height: 280px;
     border: 1px solid black;
     margin: 0 auto;
 }
 
+/*Definindo coresa para os botões e links das questões 1 e 2*/
 #btnVermelho, #linkVermelho {
     color: red;
 }

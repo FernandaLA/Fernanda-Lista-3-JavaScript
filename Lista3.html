@@ -72,32 +72,33 @@
             <input type="text" id="dscPalavra" name="dscPalavra" placeholder="Escreva uma palavra" onchange="javascript:verificaPalindromo();">
             <div id="respostaSeis"></div>
         </div>
-        <div class="questoes" style="height: 400px;">
-            <h2 style="color: darkorange;">Questão 7</h2>
+        <div class="questoes" style="height: 350px;">
+            <h2>Questão 7</h2>
             <div id="questaoSete"></div>
             <input type="button" value="Salvar" onclick="javascript:salvar()">
         </div>
-        <div class="questoes">
+        <div class="questoes" style="height: 450px;">
             <h2>Questão 8</h2>
             <form style="padding-left: 10px">
-                Nome: <input type="text" id="nomePessoa" name="nomePessoa"><br>
+                Nome: <input type="text" id="nomePessoa" name="nomePessoa"><br><br>
                 Pessoa: <input type="radio" id="tpoPessoa" name="tpoPessoa" value="fisica" onchange="javascript:verificaCampos('f'); return false;"> Física
-                        <input type="radio" id="tpoPessoa" name="tpoPessoa" value="juridica" onchange="javascript:verificaCampos('j'); return false;"> Jurídica <br>
+                        <input type="radio" id="tpoPessoa" name="tpoPessoa" value="juridica" onchange="javascript:verificaCampos('j'); return false;"> Jurídica <br><br>
                 CPF: <input type="text" id="cpfPessoa" name="cpfPessoa"> <!--Abilitado apenas se pessoa fisica-->
-                CNPJ: <input type="text" id="cnpjEmpresa" name="cnpjEmpresa"><br> <!--Abilitado apenas se pessoa juridica-->
-                Data de Nascimento: <input type="date" id="dtaNascimento" name="dtaNascimento"><br> <!--Abilitado apenas se pessoa fisica e só numeros-->
+                CNPJ: <input type="text" id="cnpjEmpresa" name="cnpjEmpresa"><br><br> <!--Abilitado apenas se pessoa juridica-->
+                Data de Nascimento: <input type="date" id="dtaNascimento" name="dtaNascimento"><br><br> <!--Abilitado apenas se pessoa fisica e só numeros-->
                 Endereço: <input type="text" id="txtEndereco" name="txtEndereco">
-                CEP: <input type="text" id="nroCep" name="nroCep" onkeypress="return apenasNumeros(event)"><br> <!--Só numeros-->
-                Telefone: <input type="text" id="telPessoa" name="telPessoa"><br>
-                E-mail: <input type="text" id="emailPessoa" name="emailPessoa"><br>
+                CEP: <input type="text" id="nroCep" name="nroCep" onkeypress="return apenasNumeros(event)"><br><br> <!--Só numeros-->
+                Telefone: <input type="text" id="telPessoa" name="telPessoa"><br><br>
+                E-mail: <input type="text" id="emailPessoa" name="emailPessoa"><br><br>
                 <input type="button" id="btnSalvar" name="btnSalvar" value="Salvar" onclick="salvarForm()">
             </form>
         </div>
         <div class="questoes">
-            <h2 style="color: red;">Questão 9</h2>
-            <form onchange="intercalarPalavras()">
+            <h2>Questão 9</h2>
+            <form>
                 Palavra 1: <input type="text" id="palavraUm" name="palavraUm">
                 Palavra 2: <input type="text" id="palavraDois" name="palavraDois"><br><br>
+                <input type="button" value="Intercalar" onclick="javascript:intercalarPalavras()"><br><br>
                 Resultado:<input type="text" id="resultado" name="resultado"
                     placeholder="Ex.: 'Joao' e 'Mara' -> JMoaaroa" disabled>
             </form>
